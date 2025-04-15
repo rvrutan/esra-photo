@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 
 function App() {
   return (
+    <div style={{ fontFamily: "'Jost', sans-serif" }}>
     <BrowserRouter>
       <Navbar />
       <Routes>
@@ -20,6 +21,7 @@ function App() {
         />
       </Routes>
     </BrowserRouter>
+    </div>
   );
 }
 
