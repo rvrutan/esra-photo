@@ -4,6 +4,9 @@ import Work from "./pages/Work";
 import Contact from "./pages/Contact";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Personal from "./pages/Personal";
+import Wedding from "./pages/Wedding";
+import Medical from "./pages/Medical";
 
 function App() {
   return (
@@ -13,6 +16,9 @@ function App() {
       <Routes>
         <Route path="/work" element={<Work />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/personal" element={<Personal />} />
+        <Route path="/wedding" element={<Wedding />} />
+        <Route path="/medical" element={<Medical />} />
         <Route
           path="/"
           element={

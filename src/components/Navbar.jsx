@@ -24,11 +24,11 @@ function Navbar() {
               <li><Link to="/contact">contact</Link></li>
               <li>
                 <details>
-                  <summary>Gallery</summary>
+                  <summary>gallery</summary>
                   <ul className="bg-base-100 rounded-t-none p-2">
-                    <li><a>personal</a></li>
-                    <li><a>wedding</a></li>
-                    <li><a>medical</a></li>
+                    <li><Link to="/personal">personal</Link></li>
+                    <li><Link to="/wedding">wedding</Link></li>
+                    <li><Link to="/medical">medical</Link></li>
                   </ul>
                 </details>
               </li>
@@ -43,18 +43,18 @@ function Navbar() {
           </div>
         </div>
       </div>
-      <div className="drawer-side">
-        <label htmlFor="my-drawer" className="drawer-overlay"></label>
+      <div className="drawer-side z-50">
+        <label htmlFor="my-drawer" className="drawer-overlay z-50"></label>
         <ul className="menu p-4 w-80 min-h-full bg-base-200">
           <li><Link to="/work" onClick={() => setIsDrawerOpen(false)}>work</Link></li>
           <li><Link to="/contact" onClick={() => setIsDrawerOpen(false)}>contact</Link></li>
           <li>
             <details>
-              <summary>Gallery</summary>
+              <summary>gallery</summary>
               <ul>
-                <li><a>personal</a></li>
-                <li><a>wedding</a></li>
-                <li><a>medical</a></li>
+                <li><Link to="/personal" onClick={() => setIsDrawerOpen(false)}>personal</Link></li>
+                <li><Link to="/wedding" onClick={() => setIsDrawerOpen(false)}>wedding</Link></li>
+                <li><Link to="/medical" onClick={() => setIsDrawerOpen(false)}>medical</Link></li>
               </ul>
             </details>
           </li>

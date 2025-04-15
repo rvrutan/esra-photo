@@ -16,22 +16,21 @@ function Contact() {
         }));
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Here you can add your form submission logic
-        console.log('Form submitted:', formData);
-    };
-
     return (
         <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-                <div className="text-center mb-12">
+                <div className="text-center mb-1">
                     <h1 className="text-4xl font-bold mb-4">Contact Me</h1>
                     <p className="text-lg">Feel free to reach out for any inquiries or collaborations</p>
                 </div>
                 
                 <div className="p-8">
-                    <form onSubmit={handleSubmit} className="space-y-6">
+                    <form 
+                        action="https://formspree.io/f/movebwgn" 
+                        method="POST"
+                        className="space-y-6"
+                    >
+                        <input type="hidden" name="_next" value="YOUR_SITE_URL/contact-success" />
                         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium">
