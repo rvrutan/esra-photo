@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Contact() {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -16,6 +18,26 @@ function Contact() {
         }));
     };
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        
+        try {
+            const response = await fetch('https://formspree.io/f/movebwgn', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                navigate('/contact-success');
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+        }
+    };
+
     return (
         <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
@@ -25,12 +47,7 @@ function Contact() {
                 </div>
                 
                 <div className="p-8">
-                    <form 
-                        action="https://formspree.io/f/movebwgn" 
-                        method="POST"
-                        className="space-y-6"
-                    >
-                        <input type="hidden" name="_next" value="YOUR_SITE_URL/contact-success" />
+                    <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium">
