@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Work from "./pages/Work";
 import Contact from "./pages/Contact";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -14,9 +15,7 @@ function App() {
         <Route
           path="/"
           element={
-            <div className="grid place-content-center h-80 text-4xl text-center">
-              Photo's grid
-            </div>
+            <Home />
           }
         />
       </Routes>
