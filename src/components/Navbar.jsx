@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const closeDrawer = () => {
+    document.getElementById("my-drawer").checked = false;
+  };
 
   return (
     <div className="drawer">
@@ -10,16 +12,14 @@ function Navbar() {
         id="my-drawer" 
         type="checkbox" 
         className="drawer-toggle" 
-        checked={isDrawerOpen}
-        onChange={(e) => setIsDrawerOpen(e.target.checked)}
       />
       <div className="drawer-content">
-        <div className="navbar bg-base-100 shadow-lg p-4">
+        <div className="navbar bg-base-100 shadow-lg p-8">
           <div className="flex-1">
-            <a className="btn btn-ghost text-4xl"><Link to="/">essra photo</Link></a>
+            <a className="btn btn-ghost text-6xl"><Link to="/">essra photo</Link></a>
           </div>
           <div className="flex-none hidden md:block">
-            <ul className="menu menu-horizontal px-1">
+            <ul className="menu menu-horizontal px-1 text-lg">
               <li><Link to="/work">work</Link></li>
               <li><Link to="/contact">contact</Link></li>
               <li>
@@ -44,21 +44,23 @@ function Navbar() {
         </div>
       </div>
       <div className="drawer-side z-50">
-        <label htmlFor="my-drawer" className="drawer-overlay z-50"></label>
-        <ul className="menu p-4 w-80 min-h-full bg-base-200">
-          <li><Link to="/work" onClick={() => setIsDrawerOpen(false)}>work</Link></li>
-          <li><Link to="/contact" onClick={() => setIsDrawerOpen(false)}>contact</Link></li>
-          <li>
-            <details>
-              <summary>gallery</summary>
-              <ul>
-                <li><Link to="/personal" onClick={() => setIsDrawerOpen(false)}>personal</Link></li>
-                <li><Link to="/wedding" onClick={() => setIsDrawerOpen(false)}>wedding</Link></li>
-                <li><Link to="/medical" onClick={() => setIsDrawerOpen(false)}>medical</Link></li>
-              </ul>
-            </details>
-          </li>
-        </ul>
+        <label htmlFor="my-drawer" className="drawer-overlay"></label>
+        <div className="menu transform transition-transform duration-300 ease-in-out  w-80 min-h-full">
+          <ul className="menu p-4 w-80 min-h-full bg-base-200">
+            <li><Link to="/work" onClick={closeDrawer}>work</Link></li>
+            <li><Link to="/contact" onClick={closeDrawer}>contact</Link></li>
+            <li>
+              <details>
+                <summary>gallery</summary>
+                <ul>
+                  <li><Link to="/personal" onClick={closeDrawer}>personal</Link></li>
+                  <li><Link to="/wedding" onClick={closeDrawer}>wedding</Link></li>
+                  <li><Link to="/medical" onClick={closeDrawer}>medical</Link></li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
