@@ -11,7 +11,7 @@ function Navbar() {
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
         <div className="navbar bg-base-100 shadow-lg p-8">
-          <div className="flex-1">
+          <div className="w-full flex flex-col items-center space-y-4">
             <Link 
               to="/" 
               className="text-6xl font-light"
@@ -19,9 +19,7 @@ function Navbar() {
             >
               essra photo
             </Link>
-          </div>
-          <div className="flex-none hidden md:block">
-            <ul className="menu menu-horizontal px-1 text-lg">
+            <ul className="menu menu-horizontal px-1 text-lg hidden md:flex">
               <li>
                 <details>
                   <summary>gallery</summary>
@@ -45,23 +43,6 @@ function Navbar() {
                 <Link to="/contact">contact</Link>
               </li>
             </ul>
-          </div>
-          <div className="flex-none md:hidden">
-            <label htmlFor="my-drawer" className="btn btn-square btn-ghost">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                className="inline-block w-5 h-5 stroke-current"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
-            </label>
           </div>
         </div>
       </div>
