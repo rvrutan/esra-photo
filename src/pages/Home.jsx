@@ -1,26 +1,10 @@
 import { useState, useEffect } from "react";
+import { getMixedImages } from "../config/images";
 
 function Home() {
-  const images = [
-    { src: 'DSC02007 kopya.JPG', size: 'large', category: 'home' },
-    { src: 'DSC_3139 kopya.jpeg', size: 'medium', category: 'medical' },
-    { src: 'DSCF6454 kopya.jpeg', size: 'small', category: 'personal' },
-    { src: 'DSC01442 kopya-2.JPG', size: 'small', category: 'home' },
-    { src: 'DSC_3394 kopyason.jpeg', size: 'medium', category: 'medical' },
-    { src: 'DSCF6375.jpeg', size: 'medium', category: 'personal' },
-    { src: 'DSC01456 kopya-6.jpeg', size: 'small', category: 'home' },
-    { src: 'DSC_3147 kopya.jpeg', size: 'large', category: 'medical' },
-    { src: 'DSCF6454 kopya-2.jpeg', size: 'medium', category: 'personal' },
-    { src: 'DSC01464 kopya-3.JPG', size: 'small', category: 'home' },
-    { src: 'IMG_5151 kopyaaaaa.jpeg', size: 'large', category: 'medical' },
-    { src: 'DSC01974 kopya.JPG', size: 'small', category: 'home' },
-    { src: 'DSCF6454 kopya-3.jpeg', size: 'medium', category: 'personal' },
-    { src: 'IMG_5201 kopya.jpeg', size: 'medium', category: 'medical' },
-    { src: 'DSCF6374-2.jpeg', size: 'small', category: 'personal' }
-  ];
-
   const [selectedImage, setSelectedImage] = useState(null);
   const [loadedImages, setLoadedImages] = useState([]);
+  const images = getMixedImages(['home', 'personal']);
 
   useEffect(() => {
     // Start with an initial delay for the first image
@@ -39,11 +23,11 @@ function Home() {
   const getImageClass = (size) => {
     switch(size) {
       case 'large':
-        return 'md:col-span-3 md:row-span-2';
+        return 'md:col-span-3';
       case 'medium':
-        return 'md:col-span-2 md:row-span-2';
+        return 'md:col-span-2';
       case 'small':
-        return 'md:col-span-1 md:row-span-2';
+        return 'md:col-span-1';
       default:
         return '';
     }
@@ -53,27 +37,26 @@ function Home() {
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <p className="text-lg">explore my collection of photography</p>
         </div>
 
         {/* Modern Image Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 auto-rows-[200px]">
+        <div className="columns-3 gap-1">
           {images.map((image, index) => (
             <div 
               key={index} 
-              className={`relative group cursor-pointer ${getImageClass(image.size)} ${
+              className={`relative group cursor-pointer mb-1 break-inside-avoid ${
                 loadedImages.includes(index) 
                   ? 'opacity-100 translate-y-0' 
-                  : 'opacity-0 translate-x-20'
+                  : 'opacity-0 translate-y-20'
               } transition-all duration-4000 ease-out`}
               style={{ transitionDelay: `${index * 500}ms` }}
               onClick={() => setSelectedImage(image)}
             >
-              <div className="absolute inset-0 overflow-hidden">
+              <div className="relative w-full">
                 <img
-                  src={`/${image.category}/${image.src}`}
+                  src={image.src}
                   alt={`${image.category} photography ${index + 1}`}
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-auto object-contain transform group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300" />
@@ -94,7 +77,7 @@ function Home() {
                 </svg>
               </button>
               <img
-                src={`/${selectedImage.category}/${selectedImage.src}`}
+                src={selectedImage.src}
                 alt={`Selected ${selectedImage.category} photography`}
                 className="max-h-[80vh] w-auto mx-auto"
               />

@@ -12,23 +12,18 @@ import ContactSuccess from "./pages/ContactSuccess";
 function App() {
   return (
     <div style={{ fontFamily: "'Jost', sans-serif" }}>
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/work" element={<Work />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/contact-success" element={<ContactSuccess />} />
-        <Route path="/personal" element={<Personal />} />
-        <Route path="/wedding" element={<Wedding />} />
-        <Route path="/medical" element={<Medical />} />
-        <Route
-          path="/"
-          element={
-            <Home />
-          }
-        />
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/work" element={<Work />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact-success" element={<ContactSuccess />} />
+          <Route path="/personal" element={<Personal />} />
+          <Route path="/wedding" element={<Wedding />} />
+          <Route path="/medical" element={<Medical />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
