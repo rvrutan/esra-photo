@@ -19,7 +19,7 @@ function Navbar() {
             >
               essra photo
             </Link>
-            <ul className="menu menu-horizontal px-1 text-lg hidden md:flex">
+            <ul className="menu menu-horizontal px-1 text-lg flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
               <li>
                 <details>
                   <summary>gallery</summary>
