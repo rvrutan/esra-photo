@@ -34,7 +34,7 @@ function Home() {
   };
 
   return (
-    <div className="min-h-screen px-4">
+    <div className="min-h-screen px-4 sm:py-10">
       <div className="w-full">
         <div className="text-center mb-12">
         </div>

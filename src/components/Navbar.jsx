@@ -19,7 +19,7 @@ function Navbar() {
             >
               essra photo
             </Link>
-            <ul className="menu menu-horizontal px-1 text-lg flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4 z-50">
+            <ul className="menu menu-horizontal px-1 text-lg hidden md:flex flex-row items-center space-x-4">
               <li>
                 <details>
                   <summary>gallery</summary>
@@ -43,13 +43,31 @@ function Navbar() {
                 <Link to="/contact">contact</Link>
               </li>
             </ul>
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <label htmlFor="my-drawer" className="btn btn-square btn-ghost">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  className="inline-block w-5 h-5 stroke-current"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </label>
+            </div>
           </div>
         </div>
       </div>
       <div className="drawer-side z-50">
         <label htmlFor="my-drawer" className="drawer-overlay"></label>
-        <div className="menu transform transition-transform duration-300 ease-in-out w-80 min-h-full">
-          <ul className="menu p-4 w-80 min-h-full bg-base-200">
+        <div className="menu p-4 w-80  bg-base-200">
+          <ul className="menu p-4 w-80 ">
             <li>
               <details>
                 <summary>gallery</summary>
