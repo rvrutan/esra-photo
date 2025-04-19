@@ -112,7 +112,7 @@ function Contact() {
                         <div>
                             <button
                                 type="submit"
-                                className="btn btn-primary w-full"
+                                className="btn btn-neutral w-full"
                             >
                                 Send Message
                             </button>

@@ -10,37 +10,38 @@ function Navbar() {
     <div className="drawer">
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
-        <div className="navbar bg-base-100 shadow-lg p-8">
-          <div className="w-full flex flex-col items-center space-y-4">
+        <div className="navbar bg-base-100 shadow-lg p-5">
+          <div className="w-full flex flex-col items-center space-y1">
             <Link 
               to="/" 
               className="text-6xl font-light"
               onClick={closeDrawer}
+              style={{ fontFamily: "Monsieur La Doulaise, cursive"}}
             >
               essra photo
             </Link>
-            <ul className="menu menu-horizontal px-1 text-lg hidden md:flex flex-row items-center space-x-4">
+            <ul className="menu menu-horizontal px-1 text-lg hidden md:flex flex-row items-center space-x-20">
               <li>
                 <details>
-                  <summary>gallery</summary>
-                  <ul className="bg-base-100 rounded-t-none p-2">
+                  <summary>Gallery</summary>
+                  <ul className="bg-base-100 rounded-t-none p-3 z-50">
                     <li>
-                      <Link to="/personal">personal</Link>
+                      <Link to="/personal">Personal</Link>
                     </li>
                     <li>
-                      <Link to="/wedding">wedding</Link>
+                      <Link to="/wedding">Wedding</Link>
                     </li>
                     <li>
-                      <Link to="/medical">medical</Link>
+                      <Link to="/medical">Medical</Link>
                     </li>
                   </ul>
                 </details>
               </li>
               <li>
-                <Link to="/work">work</Link>
+                <Link to="/work">Work</Link>
               </li>
               <li>
-                <Link to="/contact">contact</Link>
+                <Link to="/contact">Contact me</Link>
               </li>
             </ul>
             {/* Mobile menu button */}

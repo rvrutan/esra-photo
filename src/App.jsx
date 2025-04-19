@@ -11,7 +11,7 @@ import ContactSuccess from "./pages/ContactSuccess";
 
 function App() {
   return (
-    <div style={{ fontFamily: "'Jost', sans-serif" }}>
+    <div style={{ fontFamily: "'Zain', sans-serif" }}>
       <BrowserRouter>
         <Navbar />
         <Routes>

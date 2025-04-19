@@ -4,7 +4,7 @@ import { getMixedImages } from "../config/images";
 function Home() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [loadedImages, setLoadedImages] = useState([]);
-  const images = getMixedImages(['home', 'personal']);
+  const images = getMixedImages([ 'personal']);
 
   useEffect(() => {
     // Start with an initial delay for the first image
