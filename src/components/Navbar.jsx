@@ -71,21 +71,21 @@ function Navbar() {
           <ul className="menu p-4 w-80 ">
             <li>
               <details>
-                <summary>gallery</summary>
+                <summary>Gallery</summary>
                 <ul>
                   <li>
                     <Link to="/personal" onClick={closeDrawer}>
-                      personal
+                      Personal
                     </Link>
                   </li>
                   <li>
                     <Link to="/wedding" onClick={closeDrawer}>
-                      wedding
+                      Wedding
                     </Link>
                   </li>
                   <li>
                     <Link to="/medical" onClick={closeDrawer}>
-                      medical
+                      Medical
                     </Link>
                   </li>
                 </ul>
@@ -93,12 +93,12 @@ function Navbar() {
             </li>
             <li>
               <Link to="/work" onClick={closeDrawer}>
-                work
+                Work
               </Link>
             </li>
             <li>
               <Link to="/contact" onClick={closeDrawer}>
-                contact
+                Contact me
               </Link>
             </li>
           </ul>
