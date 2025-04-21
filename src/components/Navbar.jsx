@@ -22,26 +22,19 @@ function Navbar() {
             </Link>
             <ul className="menu menu-horizontal px-1 text-lg hidden md:flex flex-row items-center space-x-20">
               <li>
-                <details>
-                  <summary>Gallery</summary>
-                  <ul className="bg-base-100 rounded-t-none p-3 z-50">
-                    <li>
-                      <Link to="/personal">Personal</Link>
-                    </li>
-                    <li>
-                      <Link to="/wedding">Wedding</Link>
-                    </li>
-                    <li>
-                      <Link to="/medical">Medical</Link>
-                    </li>
-                  </ul>
-                </details>
+                <Link to="/personal">Personal</Link>
+              </li>
+              <li>
+                <Link to="/wedding">Wedding</Link>
+              </li>
+              <li>
+                <Link to="/medical">Medical</Link>
               </li>
               <li>
                 <Link to="/work">Work</Link>
               </li>
               <li>
-                <Link to="/contact">Contact me</Link>
+                <Link to="/contact">Contact</Link>
               </li>
             </ul>
             {/* Mobile menu button */}
@@ -67,8 +60,8 @@ function Navbar() {
       </div>
       <div className="drawer-side z-50">
         <label htmlFor="my-drawer" className="drawer-overlay"></label>
-        <div className="menu p-4 w-80  bg-base-200">
-          <ul className="menu p-4 w-80 ">
+        <div className="menu p-4 w-80 bg-base-200">
+          <ul className="menu p-4 w-80">
             <li>
               <details>
                 <summary>Gallery</summary>
@@ -98,7 +91,7 @@ function Navbar() {
             </li>
             <li>
               <Link to="/contact" onClick={closeDrawer}>
-                Contact me
+                Contact
               </Link>
             </li>
           </ul>
