@@ -11,7 +11,7 @@ function Navbar() {
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
         <div className="navbar bg-base-100 shadow-lg p-5">
-          <div className="w-full flex flex-col items-center space-y1">
+          <div className="w-full flex flex-col items-center space-y-1">
             <Link 
               to="/" 
               className="text-6xl font-light"
